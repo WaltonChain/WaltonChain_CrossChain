@@ -1,0 +1,44 @@
+version: '3'
+services:
+  gwtc:
+    container_name: gwtc
+    image: baoding/gwtc
+    ports:
+      - 10101:10101
+      - 6545:6545
+    environment:
+      - MODE=normal
+    command: /root/init.sh
+  service_management:
+    container_name: service_management
+    image: ko12/service_management
+    links:
+      - gwtc:gwtc
+    depends_on:
+      - gwtc
+  service_management_web:
+    container_name: service_management_web
+    image: ko12/service_management_web
+    ports:
+      - 8880:80
+    links:
+      - service_management:service_management
+    depends_on:
+      - service_management
+  data_verify:
+    container_name: data_verify
+    image: ko12/data_verify
+    links:
+      - gwtc:gwtc
+    depends_on:
+      - gwtc
+  data_verify_web:
+    container_name: data_verify_web
+    image: ko12/data_verify_web
+    ports:
+      - 8881:80
+    links:
+      - data_verify:data_verify
+    depends_on:
+      - data_verify
+    

@@ -1,0 +1,44 @@
+version: '3'
+services:
+  gwtc:
+      container_name: gwtc
+      restart: "no"
+      image: baoding/gwtcrpc
+      environment:
+          MODE: smn
+      ports:
+        - "10101:10101"
+      command: /root/init.sh
+  mongo:
+      container_name: mongo    
+      restart: always
+      image: baoding/smn_mongo
+      volumes:
+         - /var/dockerMongodb/db:/data/db
+      environment:
+         MONGO_INITDB_DATABASE: smn
+         MONGO_NON_ROOT_ROLE: dbAdmin
+         MONGO_NON_ROOT_USERNAME: username
+         MONGO_NON_ROOT_PASSWORD: password
+  smn:
+      container_name: smn
+      restart: always
+      image: baoding/smn
+      environment:
+        MONGO_USERNAME: username
+        MONGO_PASSWORD: password
+      depends_on:
+          - mongo
+      links:
+          - mongo
+          - gwtc
+  smn_web:
+      container_name: smn_web
+      restart: always
+      image: baoding/smn_web
+      ports:
+         - "80:80"
+      links:
+         - smn
+
+
