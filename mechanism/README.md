@@ -22,9 +22,7 @@
    ![](images/3.png)
    ![](images/4.png)
 
-1. Click "Import Keystore",add the smn's worker.
-
-  ![](images/22.png)
+1. Click "Import Keystore",add the smn's worker.![](images/22.png)
 
 1. Select your worker's keystore and input password,click "Confirm".![](images/23.png)
 
