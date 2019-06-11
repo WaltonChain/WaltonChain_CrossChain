@@ -1,6 +1,5 @@
 ###  Cross-Chain Service Manual
 #### Description:
-- Cross-chain data testing on back end server and front end. After deployment is complete, testing may be performed in the SMN front end.
 ![](images/wtc_logo.jpg)
 1. Endorsement means uploading child chain data to the parent chain. Child chains cannot perform any changes. Block endorsement is obtaining hash for each child chain block. Business endorsement refers to a child chain business contract. Business contract is used to store specific business data on child chains. During endorsement, business data are obtained from a business contract.
 2. Endorsement contract is used to process child chain data and upload it to the parent chain. addEndorsement function serves to upload processed data to the parent chain, therefore parent chain has frequent upload transactions.
@@ -22,12 +21,8 @@
    ![](images/3.png)
    ![](images/4.png)
 
-1. Click "Import Keystore",add the smn's worker.![](images/22.png)
-
-1. Select your worker's keystore and input password,click "Confirm".![](images/23.png)
-
 1. When the WTC node information and SMN address are configured, the child chains followed by the SMN address are retrieved and displayed in the child chain list on the left panel.
-  ![](images/5.png)
+   ![](images/5.png)
 
 1. Click the icon in the upper right corner of the child chain list to switch the list display method.
   ![](images/6.png)
@@ -36,10 +31,14 @@
   ![](images/7.png)
 
 1. When a contract is not configured, its status is ‘STOPPED’, configuration is ‘Unconfigured’ and the operation button is a grey triangle. When you click on the button, the contract configuration input box pops up. Enter the configurations, click ‘Confirm’ (the execution account is subKeyStore address only).
+
    -Execution Account: account for cross-chain transmission. Please DO NOT use accounts     with big balance e.g. SMN accounts
-    -Reference Parent Chain Node Configuration: http://ip:6545
-    -Reference Parent Chain ID Configuration: 15
-    -Password: execution account password is slk123456
+
+   -Reference Parent Chain Node Configuration: http://ip:6545
+
+   -Reference Parent Chain ID Configuration: 15
+
+   -Password: execution account password is your worker's password
     ![](images/8.png)
 
 1. After successful cross-chain contract configuration, the status will be ‘STOPPED’ and you can see ‘Modify Configuration’ button in the Configuration column. The respective operation button is a blue triangle. Click ‘Modify Configuration’ to reconfigure the cross-chain contract.
@@ -62,11 +61,10 @@
    ![](images/15.png)
 
 1. Click the settings icon on the top navigation bar to see the settings menu.
-   ![](images/16.png)
-   Click ‘Modify’ in the SMN section of the menu to reconfigure SMN address. After entering the modified SMN address, click ‘Confirm’.
-   ![](images/17.png)
-   Click ‘Import Keystore’ to add a new keystore.
-   ![](images/18.png)
+    ![](images/16.png)
+    Click ‘Modify’ in the SMN section of the menu to reconfigure SMN address. After entering the modified SMN address, click ‘Confirm’.
+    ![](images/17.png)
+    Click "Import Keystore",add the smn's worker.![](images/22.png)Select your worker's keystore and input password,click "Confirm".![](images/23.png)
 
 1. Click the user icon on the top navigation bar for account operations.
 ![](images/19.png)
