@@ -42,7 +42,7 @@ Note: In case of multiple votes, more than half equals passed.
 ### Deployment
 + Download configuration files
 + For docker-compose-smn.yml or docker-compose-all.yml, please change the configuration items of the configuration file: change "MONGO_NON_ROOT_USERNAME" and "MONGO_USERNAME" to the database user name of your choice, change "MONGO_NON_ROOT_PASSWORD" and "MONGO_PASSWORD" to the database password of your choice, save the changes. (Note: there is a space after ":" in all configuration items)
-+ In the directory of the same level with the configuration files, use the command: docker-compose-f [configuration file name] up -d
++ In the directory of the same level with the configuration files, use the command: docker-compose -f [configuration file name] up -d
 
 Default configuration: SMN service port 80, Management System service port 8880, Data Verification System service port 8881.
 
